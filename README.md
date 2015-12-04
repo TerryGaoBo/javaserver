@@ -9,16 +9,16 @@
 ##########################################################
 
 #所用第三方库,工具：
-netty
-spring
-json
-mybatis
-resteasy
-servlet
-commons
-log4j
-mysql-connector-java
-quartz
+* netty
+* spring
+* json
+* mybatis
+* resteasy
+* servlet
+* commons
+* log4j
+* mysql-connector-java
+* quartz
 
 
 #数据库：
