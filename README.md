@@ -52,3 +52,15 @@ json,序列化，反序列化
 *Linux优化 控制内存占用大小
 *数据库优化 修改数据库连接数；数据库设置等等
 
+
+### IDE 
+* Spring Tool Suite 
+* sublime text
+* mac
+* linux
+* mysql
+* tower
+* zoc7
+
+
+
