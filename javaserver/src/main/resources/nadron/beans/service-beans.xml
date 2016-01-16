@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-support-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd">
+
+	<task:annotation-driven />
+	<bean id="demoServiceBasicUsageCron" class="io.nadron.service.impl.DemoServiceBasicUsageCron"></bean>
+	<!-- Configure all properties files here, wildcards like *.properties are also allowed -->
+	<context:property-placeholder location="nadron/props/nadron.properties" />
+
+	<jdbc:initialize-database data-source="dataSource" ignore-failures="ALL">
+		<jdbc:script location="${jdbc.initLocation}" />
+		<jdbc:script location="${jdbc.dataLocation}" />
+	</jdbc:initialize-database>
+
+	<bean id="dataSource" class="com.jelly.node.datastore.DataSource" init-method="init">
+		<property name="driver" value="${jdbc.driver}" />
+		<!-- <property name="url" value="${jdbc.url}" /> -->
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="poolMaximumActiveConnections" value="5" />
+		<property name="poolMaximumCheckoutTime" value="20000" />
+		<property name="poolPingQuery" value="select 1 from dual;" />
+		<property name="poolPingEnabled" value="true" />
+		<property name="poolPingConnectionsNotUsedFor" value="0" />
+	</bean>
+
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!--<property name="configLocation" value="${jdbc.configLocation}" /> -->
+	</bean>
+
+
+	<bean id="naruMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.jelly.node.datastore.mapper.NaruMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="roleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.jelly.node.datastore.mapper.RoleMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+	<bean id="unionMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.jelly.node.datastore.mapper.UnionMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="payMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.jelly.node.datastore.mapper.PayMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="teamMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.jelly.node.datastore.mapper.TeamMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="objectCacheService" class="com.jelly.node.cache.ObjectCacheService">
+		<property name="jackson" ref="jacksonEntity" />
+		<property name="dataStore" ref="mysqlDataStore" />
+	</bean>
+	
+	 <bean id="allPlayersCache" class="com.jelly.node.cache.AllPlayersCache">
+		<property name="mapper" ref="roleMapper" />
+	</bean>
+	 
+	<bean id="unionCacheService" class="com.jelly.node.cache.UnionCacheService">
+		<property name="jackson" ref="jacksonEntity" />
+		<property name="mapper" ref="unionMapper" />
+	</bean>
+	
+
+	<bean id="taskManagerService" class="io.nadron.service.impl.SimpleTaskManagerService" destroy-method="shutdown">
+		<constructor-arg type="int" index="0" value="4" />
+	</bean>
+	
+	<bean id="worldActivity" class="com.jelly.activity.WorldActivity" destroy-method="shutdown">
+		<property name="taskManagerService" ref="taskManagerService" />
+	</bean>
+
+	<bean id="gameAdminService" class="io.nadron.service.impl.SimpleGameAdminService">
+		<property name="games">
+			<set></set>
+		</property>
+	</bean>
+
+	<bean id="udpSessionRegistry" class="io.nadron.service.impl.SessionRegistry" />
+
+	<bean id="reconnectSessionRegistry" class="io.nadron.service.impl.ReconnectSessionRegistry">
+		<property name="taskManagerService" ref="taskManagerService" />
+		<property name="reconnectDelay" value="${reconnect.delay}" />
+	</bean>
+
+	<bean id="simpleUniqueIdGenerator" class="io.nadron.service.impl.SimpleUniqueIdGenerator">
+		<property name="objectCache" ref="objectCacheService" />
+	</bean>
+
+	<bean id="jackson" class="com.fasterxml.jackson.databind.ObjectMapper" />
+
+	<bean id="jacksonEntity" class="com.dol.cdf.common.config.EntityObjectMapper" />
+	<bean id="mysqlDataStore" class = "com.jelly.node.datastore.MySqlDataStore" />
+
+	<bean id="msgPack" class="org.msgpack.MessagePack" />
+	
+</beans>

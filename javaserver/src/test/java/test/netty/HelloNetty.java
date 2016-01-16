@@ -1,4 +1,4 @@
-package javaserver;
+package test.netty;
 
 import edu.emory.mathcs.backport.java.util.concurrent.Executors;
 import io.netty.bootstrap.ServerBootstrap;

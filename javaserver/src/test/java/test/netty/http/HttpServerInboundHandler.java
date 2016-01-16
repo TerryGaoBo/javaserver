@@ -1,4 +1,4 @@
-package javaserver.http;
+package test.netty.http;
 
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONNECTION;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_LENGTH;

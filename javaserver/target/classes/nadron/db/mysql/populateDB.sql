@@ -1,0 +1,4 @@
+--ALTER TABLE `balli`.`role` ADD COLUMN `exp` INT(11) DEFAULT 0 AFTER `coin`;
+--ALTER TABLE `balli`.`role` ADD COLUMN `examLv` INT(11) DEFAULT 0 AFTER `exp`;
+--ALTER TABLE `balli`.`role` ADD COLUMN `chapter` INT(11) DEFAULT 0 AFTER `examLv`;
+--ALTER TABLE `balli`.`role` ADD COLUMN `stage` INT(11) DEFAULT 0 AFTER `chapter`;

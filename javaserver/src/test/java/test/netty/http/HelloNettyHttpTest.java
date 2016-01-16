@@ -1,4 +1,4 @@
-package javaserver.http;
+package test.netty.http;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
