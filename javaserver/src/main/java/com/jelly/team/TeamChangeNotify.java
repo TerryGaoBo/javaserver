@@ -1,0 +1,11 @@
+package com.jelly.team;
+
+public enum TeamChangeNotify {
+	JOIN_MEMBER,
+	REFUSE_MEMBER,
+	KICK_MEMBER,
+	MODIFY_TITLE,
+	DELATE_COMMANDER,
+	DISMISS_TEAM,
+	MODIFY_COMMANDER
+}

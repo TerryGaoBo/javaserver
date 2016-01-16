@@ -63,6 +63,7 @@
 	<classpathentry kind="lib" path="lib/resteasy-spring-3.0.8.Final.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api-2.5.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.5.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-3.2.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-beans-3.2.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-3.2.2.RELEASE.jar"/>
