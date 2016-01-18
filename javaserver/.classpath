@@ -17,7 +17,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 8 [1.8.0_40]">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -54,7 +54,7 @@
 	<classpathentry kind="lib" path="lib/mybatis-3.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/mybatis-spring-1.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.30-bin.jar"/>
-	<classpathentry kind="lib" path="lib/netty-all-4.0.33.Final.jar"/>
+	<classpathentry kind="lib" path="lib/netty-all-4.0.20.Final.jar"/>
 	<classpathentry kind="lib" path="lib/poi-3.9-20121203.jar"/>
 	<classpathentry kind="lib" path="lib/quartz-all-1.8.6.jar"/>
 	<classpathentry kind="lib" path="lib/resteasy-jackson2-provider-3.0.8.Final.jar"/>
@@ -63,7 +63,6 @@
 	<classpathentry kind="lib" path="lib/resteasy-spring-3.0.8.Final.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api-2.5.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.5.jar"/>
-	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.5.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-3.2.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-beans-3.2.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-3.2.2.RELEASE.jar"/>

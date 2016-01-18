@@ -26,4 +26,17 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>mybuild.xml</name>
+			<type>1</type>
+			<locationURI>copy_PARENT/mybuild.xml</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PARENT</name>
+			<value>$%7BPARENT-1-ECLIPSE_HOME%7D/Projects/N_RuT0</value>
+		</variable>
+	</variableList>
 </projectDescription>
