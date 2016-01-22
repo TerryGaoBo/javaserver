@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<!--     -->
+
+<project name="nadronServer" default="build" basedir=".">
+
+	<fail unless="assembly.dir" message="failed to set assembly.dir"/>
+	
+	<property name="outputDir" value="${assembly.dir}/output/nadron" />
+	<property name="outputClasses" value="${outputDir}/classes" />
+	<property name="outputLib" value="${outputDir}/lib" />
+	<property name="javaSrcDebug" value="true" />
+
+	<property name="src" value="src/main/java"/>
+	<property name="lib" value="lib"/>
+	<property name="resource" value="src/main/resources"/>
+
+
+	<path id="class.path">
+		<fileset dir="${lib}">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement path="${java.class.path}/"/>
+	</path>
+
+	<target name="clean">
+		<echo>cleaning ${outputDir}</echo>
+		<delete dir="${outputDir}"/>
+	</target>
+	<target name="init">
+		<mkdir dir="${outputDir}"/>
+		<mkdir dir="${outputLib}"/>
+		<mkdir dir="${outputClasses}"/>
+	</target>
+	<target name="build" depends="init">
+		<echo>Compiling from src dir ${src}</echo>
+		<echo>Compiling to   out dir ${outputDir}</echo>
+		<!-- <echo>Compiling with classpath: ${toString:class.path}</echo> -->
+
+
+		<!-- Compile the java code from ${src} into ${outputDir} -->
+		<javac nowarn="on" encoding="UTF-8" srcdir="${src}" includes="**/*.java" destdir="${outputClasses}" 
+    			includeantruntime="false" debug="${javaSrcDebug}" verbose="off" deprecation="off" optimize="on" target="1.6">
+			<classpath refid="class.path"/>
+		</javac>
+		<copy todir="${outputLib}">
+			<fileset dir="lib"/>
+		</copy>
+
+			<echo>copy  resource classpath:from ${resource} to  ${outputClasses}</echo>		
+		<copy todir="${outputClasses}">
+			<fileset dir="${resource}" />
+		</copy>
+		
+		<copy file="StageServerLog4j.properties" todir="${outputClasses}" />
+		
+	</target>
+
+</project>

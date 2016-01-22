@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 8 [1.8.0_40]">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/backport-util-concurrent-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/blazeds-common-3.2.0.3978.jar"/>
+	<classpathentry kind="lib" path="lib/blazeds-core-3.2.0.3978.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.8.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/guava-15.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-datatype-guava-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-jaxrs-base-2.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-jaxrs-json-provider-2.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-module-jaxb-annotations-2.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/javassist.jar"/>
+	<classpathentry kind="lib" path="lib/javax.annotation-api-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/javax.ws.rs-api-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jcl-over-slf4j-1.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/jetlang-0.2.10.jar"/>
+	<classpathentry kind="lib" path="lib/joda-time-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jsr250-api-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="lib/msgpack-0.6.8.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-3.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-spring-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.30-bin.jar"/>
+	<classpathentry kind="lib" path="lib/netty-all-4.0.20.Final.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/quartz-all-1.8.6.jar"/>
+	<classpathentry kind="lib" path="lib/resteasy-jackson2-provider-3.0.8.Final.jar"/>
+	<classpathentry kind="lib" path="lib/resteasy-jaxb-provider-3.0.8.Final.jar"/>
+	<classpathentry kind="lib" path="lib/resteasy-jaxrs-3.0.8.Final.jar"/>
+	<classpathentry kind="lib" path="lib/resteasy-spring-3.0.8.Final.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/spring-aop-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-beans-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-support-3.2.2.release.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-expression-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-jdbc-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-test-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-tx-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-web-3.2.2.RELEASE.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
